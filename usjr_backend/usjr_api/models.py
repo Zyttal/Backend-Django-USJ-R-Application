@@ -13,7 +13,7 @@ class Colleges(models.Model):
     collshortname = models.CharField(max_length=20)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'colleges'
 
 
@@ -24,7 +24,7 @@ class Departments(models.Model):
     deptcollid = models.ForeignKey(Colleges, models.DO_NOTHING, db_column='deptcollid')
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'departments'    
 
 
@@ -36,7 +36,7 @@ class Programs(models.Model):
     progcolldeptid = models.ForeignKey(Departments, models.DO_NOTHING, db_column='progcolldeptid')
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'programs'
 
 
@@ -50,5 +50,5 @@ class Students(models.Model):
     studyear = models.IntegerField()
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'students'
